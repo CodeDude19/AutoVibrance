@@ -25,24 +25,33 @@ Built specifically for Arc Raiders (`PioneerGame.exe`) to enhance visibility wit
 - Windows 10/11
 - NVIDIA GPU with latest drivers
 
-## Download
+## Installation
 
-### Quick Install (Recommended)
+### Option 1: Installer (Recommended)
 
 1. Go to [**Releases**](https://github.com/CodeDude19/AutoVibrance/releases)
-2. Download `AutoVibrance-v1.0.0-win-x64.zip`
-3. Extract to any folder
-4. Run `AutoVibrance.exe`
+2. Download `AutoVibrance-Setup-v1.0.0.exe`
+3. Run the installer
+4. Choose options (Desktop shortcut, Start with Windows)
 
-No .NET runtime required - everything is included!
+### Option 2: Portable
 
-### Build from Source
+1. Download `AutoVibrance-v1.0.0-win-x64.zip` from [Releases](https://github.com/CodeDude19/AutoVibrance/releases)
+2. Extract to any folder
+3. Run `AutoVibrance.exe`
+
+### Option 3: Build from Source
 
 ```bash
 git clone https://github.com/CodeDude19/AutoVibrance.git
 cd AutoVibrance
 dotnet publish -c Release -r win-x64 --self-contained true -o ./publish
+
+# Run PowerShell installer (as Admin)
+powershell -ExecutionPolicy Bypass -File Install.ps1
 ```
+
+No .NET runtime required - everything is self-contained!
 
 ## Usage
 

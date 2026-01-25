@@ -66,7 +66,12 @@ public class TrayApplication : ApplicationContext
         if (File.Exists(pngPath))
         {
             using var bitmap = new Bitmap(pngPath);
-            return Icon.FromHandle(bitmap.GetHicon());
+            // Resize to standard icon size for better display
+            using var resized = new Bitmap(bitmap, new Size(32, 32));
+            IntPtr hIcon = resized.GetHicon();
+            Icon icon = Icon.FromHandle(hIcon);
+            // Clone to create an independent icon that won't be affected when handle is destroyed
+            return (Icon)icon.Clone();
         }
 
         // Try ICO as fallback
