@@ -27,29 +27,18 @@ Built specifically for Arc Raiders (`PioneerGame.exe`) to enhance visibility wit
 
 ## Installation
 
-### Option 1: Installer (Recommended)
+### Installer (Recommended)
 
-1. Go to [**Releases**](https://github.com/CodeDude19/AutoVibrance/releases)
+1. Go to [**Releases**](https://github.com/CodeDude19/AutoVibrance/releases/latest)
 2. Download `AutoVibrance-Setup-v1.0.0.exe`
 3. Run the installer
 4. Choose options (Desktop shortcut, Start with Windows)
 
-### Option 2: Portable
+### Portable Version
 
-1. Download `AutoVibrance-v1.0.0-win-x64.zip` from [Releases](https://github.com/CodeDude19/AutoVibrance/releases)
+1. Download `AutoVibrance-v1.0.0-win-x64.zip` from [Releases](https://github.com/CodeDude19/AutoVibrance/releases/latest)
 2. Extract to any folder
 3. Run `AutoVibrance.exe`
-
-### Option 3: Build from Source
-
-```bash
-git clone https://github.com/CodeDude19/AutoVibrance.git
-cd AutoVibrance
-dotnet publish -c Release -r win-x64 --self-contained true -o ./publish
-
-# Run PowerShell installer (as Admin)
-powershell -ExecutionPolicy Bypass -File Install.ps1
-```
 
 No .NET runtime required - everything is self-contained!
 
