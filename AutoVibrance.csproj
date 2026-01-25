@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <AssemblyName>AutoVibrance</AssemblyName>
+    <RootNamespace>AutoVibrance</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NvAPIWrapper.Net" Version="0.8.1.101" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\icon.ico" />
+    <Content Include="Resources\icon.ico" Condition="Exists('Resources\icon.ico')">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+</Project>
