@@ -61,11 +61,21 @@ public class TrayApplication : ApplicationContext
 
     private Icon LoadIcon()
     {
-        var iconPath = Path.Combine(AppContext.BaseDirectory, "Resources", "icon.ico");
-        if (File.Exists(iconPath))
+        // Try PNG first
+        var pngPath = Path.Combine(AppContext.BaseDirectory, "Resources", "icon.png");
+        if (File.Exists(pngPath))
         {
-            return new Icon(iconPath);
+            using var bitmap = new Bitmap(pngPath);
+            return Icon.FromHandle(bitmap.GetHicon());
         }
+
+        // Try ICO as fallback
+        var icoPath = Path.Combine(AppContext.BaseDirectory, "Resources", "icon.ico");
+        if (File.Exists(icoPath))
+        {
+            return new Icon(icoPath);
+        }
+
         // Use default application icon
         return SystemIcons.Application;
     }
