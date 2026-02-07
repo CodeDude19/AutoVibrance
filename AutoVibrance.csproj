@@ -8,6 +8,7 @@
     <Nullable>enable</Nullable>
     <AssemblyName>AutoVibrance</AssemblyName>
     <RootNamespace>AutoVibrance</RootNamespace>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
   </PropertyGroup>
 
   <ItemGroup>
