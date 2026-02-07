@@ -91,6 +91,14 @@ public class DisplaySettings : IDisposable
         }
     }
 
+    /// <summary>
+    /// Applies gamma only without changing vibrance (for fast dynamic updates).
+    /// </summary>
+    public void ApplyGammaOnly(float gamma)
+    {
+        SetGammaAllMonitors(gamma);
+    }
+
     private void SetDigitalVibranceAllDisplays(int level)
     {
         int targetLevel = Math.Clamp(level, 0, 100);
